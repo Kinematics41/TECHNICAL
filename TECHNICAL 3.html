@@ -1,0 +1,95 @@
+<html>
+  <head>
+    <style>
+      .calculator {
+        width: 400px;
+        height: 500px;
+        margin: 0 auto;
+        text-align: center;
+        background-color: #333;
+        border-radius: 10px;
+        padding: 20px;
+        color: #333;
+      }
+      .display {
+        background-color: #ddd;
+        height: 50px;
+        width: 100%;
+        border-radius: 10px;
+        font-size: 36px;
+        padding: 10px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        text-align: right;
+      }
+      .buttons {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .btn {
+        background-color: #fff;
+        color: #333;
+        width: 70px;
+        height: 70px;
+        border-radius: 35px;
+        font-size: 24px;
+        margin: 10px;
+        float: left;
+        cursor: pointer;
+        box-sizing: border-box;
+        text-align: center;
+        line-height: 70px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="display" id="display"></div>
+      <div class="buttons">
+        <div class="btn" id="one">1</div>
+        <div class="btn" id="two">2</div>
+        <div class="btn" id="three">3</div>
+        <div class="btn" id="add">+</div>
+        <div class="btn" id="four">4</div>
+        <div class="btn" id="five">5</div>
+        <div class="btn" id="six">6</div>
+        <div class="btn" id="subtract">-</div>
+        <div class="btn" id="seven">7</div>
+        <div class="btn" id="eight">8</div>
+        <div class="btn" id="nine">9</div>
+        <div class="btn" id="multiply">x</div>
+        <div class="btn" id="clear">C</div>
+        <div class="btn" id="zero">0</div>
+        <div class="btn" id="equals">=</div>
+        <div class="btn" id="divide">/</div>
+      </div>
+    </div>
+    <script>
+      const display = document.querySelector('#display');
+      const buttons = document.querySelectorAll('.btn');
+
+  buttons.forEach(function(button) {
+    button.addEventListener('click', function() 
+    {
+      if (button.id === 'clear') {
+        display.textContent = '';
+        return;
+      }
+      if (button.id === 'equals') {
+        display.textContent = eval(display.textContent);
+        return;
+      }
+      if (button.id === 'multiply') {
+        display.textContent += '*';
+        return;
+      }
+      display.textContent += button.textContent;
+    });
+  });
+</script>
+  </body>
+</html>
+
+
+
+

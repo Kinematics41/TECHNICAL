@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        transition: all 1s;
+      }
+
+      .Monday {
+        background-color: red;
+      }
+
+      .Tuesday {
+        background-color: orange;
+      }
+
+      .Wednesday {
+        background-color: yellow;
+      }
+
+      .Thursday {
+        background-color: green;
+      }
+
+      .Friday {
+        background-color: blue;
+      }
+
+      .Saturday {
+        background-color: purple;
+      }
+
+      .Sunday {
+        background-color: pink;
+      }
+
+      .show {
+        top: 150px;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="Monday">Monday</button>
+    <button class="Tuesday">Tuesday</button>
+    <button class="Wednesday">Wednesday</button>
+    <button class="Thursday">Thursday</button>
+    <button class="Friday">Friday</button>
+    <button class="Saturday">Saturday</button>
+    <button class="Sunday">Sunday</button>
+
+    <div class="box"></div>
+
+    <script>
+      const buttons = document.querySelectorAll("button");
+      const box = document.querySelector(".box");
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          box.className = "box " + button.className;
+          box.classList.toggle("show");
+        });
+      });
+    </script>
+  </body>
+</html>
+
+
